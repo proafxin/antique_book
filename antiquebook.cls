@@ -33,6 +33,7 @@
 \setmathfont[range={\symfrak},FakeBold=\fakebold]{Asana Math}
 \setmathfont[range={\int},Scale=2,]{Old Standard}
 \setmathfont[range={\sum,\prod},Scale=2]{Old Standard}
+\setmathfont[range={\partial},FakeBold=\fakebold]{Old Standard Italic}
 
 \RequirePackage{mathspec}
 \setmathsfont(Digits)[Scale=MatchUppercase,FakeBold=\fakebold]{Old Standard}
@@ -41,3 +42,18 @@
 \fi
 
 \newtheorem{theorem}{\textsc{Theorem}}
+
+\RequirePackage{fancyhdr,authoraftertitle}
+
+\renewcommand{\chaptermark}[1]{\markboth{#1}{#1}}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{%
+	\ifodd\value{page}
+	\small\nouppercase{\scshape \MyAuthor}
+	\else
+	\small\nouppercase{$\S$\thechapter. \ \scshape\leftmark}
+	\fi
+}
+\fancyfoot[C]{\thepage}
