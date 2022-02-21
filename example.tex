@@ -1,6 +1,7 @@
-\documentclass{antique_book}
+\documentclass{antiquebook}
 
 \usepackage{lipsum}
+\usepackage[math]{blindtext}
 
 \author{Masum Billal}
 \title{Testing Antique Book}
@@ -12,9 +13,9 @@
 	\mainmatter
 	\chapter{First}
 	\section{Dummy}
-	\lipsum
-		\begin{align*}
-			\sum_{i=1}^{n}i
-				& = \dfrac{n(n+1)}{2}
-		\end{align*}
+	\blindmathtrue
+	\blindmathpaper
+	\section{Second}
+	\blindmathpaper
+	$\alpha,\beta,\gamma,\phi,\varphi,\psi,\Psi,\rho,\partial$
 \end{document}
