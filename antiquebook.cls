@@ -34,7 +34,9 @@
 \setmathfont[range={\int},Scale=\fakebold,]{Old Standard Italic}
 \setmathfont[range={\partial},Scale=MatchUppercase,FakeBold=\fakebold]{Old Standard Italic}
 \setmathfont[range={\sum,\prod},Scale=1.7]{Old Standard Italic}
-
+\newfontfamily{\mtmext}[FakeBold=\fakebold]{Old Standard}
+\newcommand*{\customaccent}[1]{\mtmext\selectfont #1}
+\newcommand{\fH}[1]{\rmfamily\H{\customaccent{#1}}}
 \usepackage{mathspec}
 \setmathsfont(Digits)[Scale=MatchUppercase,FakeBold=\fakebold]{ModernMTStd-Extended.otf}
 \setmathsfont(Latin)[Uppercase=Italic,Lowercase=Italic,FakeBold=\fakebold,Scale=MatchUppercase]{ModernMTStd-ExtendedItalic.otf}
