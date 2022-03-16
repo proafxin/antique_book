@@ -27,20 +27,19 @@
 \makeatletter\let\normalrender\PdfRender@NormalColorHook\let\PdfRender@NormalColorHook\@empty\newcommand*{\textnormalrender}[1]{\begingroup\normalrender#1\endgroup}\makeatother
 \else
 \newcommand{\fakebold}{2}
-\setmainfont[FakeBold=\fakebold,ItalicFont=ModernMT-ExtendedItalic.otf,BoldItalicFont=OldStandard-BoldItalic.otf,SmallCapsFont={OldStandard-Regular.otf},SmallCapsFeatures={Letters=SmallCaps,FakeBold=\fakebold,RawFeature=+smcp},BoldFont=OldStandard-Bold.otf,BoldFeatures={FakeBold=0,SmallCapsFont=OldStandard-Bold.otf,SmallCapsFeatures={RawFeature=+smcp}},BoldItalicFeatures={FakeBold=0}]{ModernMTStd-Extended.otf}
+\setmainfont[FakeBold=\fakebold,ItalicFont=ModernMT-ExtendedItalic.otf,BoldItalicFont=OldStandard-BoldItalic.otf,SmallCapsFont={OldStandard-Regular.otf},SmallCapsFeatures={Letters=SmallCaps,FakeBold=\fakebold,RawFeature=+smcp},BoldFont=OldStandard-Bold.otf,BoldFeatures={FakeBold=0,SmallCapsFont=OldStandard-Bold.otf,SmallCapsFeatures={RawFeature=+smcp}},BoldItalicFeatures={FakeBold=0}]{ModernMT-Extended-OldStandard.otf}
 \setmathfont[FakeBold=\fakebold,]{NewCMMath-Book.otf}
-\setmathfont[range=it,FakeBold=\fakebold]{Old Standard Italic}
-\setmathfont[range={\symfrak},FakeBold=\fakebold]{Asana Math}
-\setmathfont[range={\int},Scale=\fakebold,]{Old Standard Italic}
-\setmathfont[range={\partial},Scale=MatchUppercase,FakeBold=\fakebold]{Old Standard Italic}
-\setmathfont[range={\sum,\prod},Scale=1.7]{Old Standard Italic}
-\newfontfamily{\mtmext}[FakeBold=\fakebold]{Old Standard}
-\newcommand*{\customaccent}[1]{\mtmext\selectfont #1}
-\newcommand{\fH}[1]{\rmfamily\H{\customaccent{#1}}}
-\usepackage{mathspec}
-\setmathsfont(Digits)[Scale=MatchUppercase,FakeBold=\fakebold]{ModernMTStd-Extended.otf}
-\setmathsfont(Latin)[Uppercase=Italic,Lowercase=Italic,FakeBold=\fakebold,Scale=MatchUppercase]{ModernMTStd-ExtendedItalic.otf}
-\defaultfontfeatures{Mapping=tex-text,Ligatures=Tex}
+\setmathfont[range={it},FakeBold=\fakebold]{ModernMT-ExtendedItalic-OldStandard-Italic.otf}
+\setmathfont[range={"0030-"0039}]{ModernMT-Extended-OldStandard.otf}
+\setmathfont[range={\symfrak,},Scale=MatchUppercase]{Asana Math}
+\setmathfont[range={\int},Scale=1.6,]{Old Standard Italic}
+\setmathfont[range={\sum,\prod},Scale=1.4]{Old Standard}
+\setmathfont[range={\partial},FakeBold=\fakebold]{Old Standard}
+\setmathfont[range={"005B,"005D,"0028,"0029,"007B,"007D,}]{Asana Math}
+%\usepackage{mathspec}
+%\setmathsfont(Digits)[Scale=MatchUppercase,FakeBold=\fakebold]{ModernMTStd-Extended.otf}
+%\setmathsfont(Latin)[Uppercase=Italic,Lowercase=Italic,FakeBold=\fakebold,Scale=MatchUppercase]{ModernMTStd-ExtendedItalic.otf}
+%\defaultfontfeatures{Mapping=tex-text,Ligatures=Tex}
 \fi
 
 \newtheorem{theorem}{\textsc{\textbf{Theorem}}}[chapter]
