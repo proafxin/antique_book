@@ -60,6 +60,6 @@
 \rfoot{ \fancyplain{}{\thepage}}
 \renewcommand{\headrulewidth}{.1pt} % remove lines as well
 
-\titleformat{\chapter}[display]{\bfseries\scshape\Huge}{}{1ex}{\centering\titlerule\vspace{1ex}}[\vspace{1ex}\titlerule]
-\titleformat{\section}[display]{\bfseries\scshape\Large}{}{1ex}{\centering$\S$\ifthenelse{\value{section}>0}{\thesection}{}\;}[\titlerule]
-\titleformat{\subsection}[display]{\bfseries\scshape\large}{}{1ex}{\centering$\S$\ifthenelse{\value{section}>0}{\thesubsection}{}\;}[\titlerule]
+\titleformat{\chapter}[display]{\bfseries\scshape\Huge}{}{1ex}{\centering\titlerule\vspace{1ex}\ifthenelse{\value{chapter}>0}{$\S\S$\thechapter\;}{}}[\vspace{1ex}\titlerule]
+\titleformat{\section}[display]{\bfseries\scshape\LARGE}{}{1ex}{\centering\ifthenelse{\value{section}>0}{$\S\S$\thesection\;}{}}[\titlerule]
+\titleformat{\subsection}[display]{\bfseries\scshape\Large}{}{1ex}{\centering\ifthenelse{\value{section}>0}{$\S\S\S$\thesection\;}{}}[\titlerule]
