@@ -3,8 +3,10 @@
 \usepackage{lipsum}
 \usepackage[math]{blindtext}
 
-\author{Masum Billal}
+\author{Masum Billal \and Author Two}
 \title{\scshape\textbf{Testing Antique Book}}
+
+\subfile{glossary.tex}
 
 \begin{document}
 	\frontmatter
@@ -17,5 +19,10 @@
 	\blindmathpaper
 	\section{Second}
 	\blindmathpaper
+	See \gls{erdos}.
+		\begin{align*}
+			\parenthesis{\squarebracket{\floor{\dfrac{x}{n}}}}
+				& \leq \curlybrace{\ceiling{\dfrac{x}{n}}}
+		\end{align*}
 	$\alpha,\beta,\gamma,\phi,\varphi,\psi,\Psi,\rho,\partial$
 \end{document}
