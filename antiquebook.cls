@@ -4,8 +4,8 @@
 
 \RequirePackage{amsmath, amsthm, amssymb}
 \RequirePackage{hyperref}
-\RequirePackage[style=philosophy-verbose,backend=biber,sortcites=true,classical=true,scauthors=true, scauthorscite=true,scauthorsbib=true,volnumformat=strings,volumeformat=romansc,]{biblatex}
 \RequirePackage{tocloft,xifthen,centernot, iftex,titlesec,ifthen,rotating,fancyhdr,subfiles,authoraftertitle}
+\usepackage[bibstyle=philosophy-modern,citestyle=philosophy-verbose,backend=biber,autopunct,sortcites,]{biblatex}
 
 \hypersetup{linktocpage,unicode,pdfencoding=auto,}
 \DeclareNameAlias{sortname}{given-family}
@@ -86,7 +86,7 @@
 \renewcommand{\cftsubsecfont}{\normalsize\normalfont\scshape}
 \renewcommand{\cftpartfont}{\normalsize\normalfont\scshape\bfseries}
 
-\usepackage[toc,nopostdot,nonumberlist,automake=true]{glossaries}
+\usepackage[toc,nopostdot,]{glossaries}
 \usepackage{makeidx}
 
 \usepackage{nomencl}
@@ -109,8 +109,9 @@
 \newcommand{\ceiling}[1]{\left\lceil{#1}\right\rceil}
 \newcommand{\parenthesis}[1]{\left(#1\right)}
 \newcommand{\curlybrace}[1]{\left\{#1\right\}}
-\newcommand{\squarebracket}[1]{\left[{#1}\right]}
+\newcommand{\squarebracket}[1]{\left[#1\right]}
 \newcommand{\rad}{\mbox{rad}}
+\newcommand{\bigo}[1]{O\parenthesis{#1}}
 
 \renewcommand*{\chapterautorefname}{Chapter}
 \renewcommand*{\sectionautorefname}{Section}
