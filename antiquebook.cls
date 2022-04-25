@@ -104,14 +104,19 @@
 \theoremstyle{definition}
 \newenvironment{definition}[1][]{\par\medskip\noindent \textsc{\textbf{{\ifthenelse{\isempty{#1}}{Definition.}{#1.}}}} \rmfamily}{\medskip}
 
-\newcommand{\lcm}{\mbox{lcm}}
 \newcommand{\floor}[1]{\left\lfloor{#1}\right\rfloor}
 \newcommand{\ceiling}[1]{\left\lceil{#1}\right\rceil}
 \newcommand{\parenthesis}[1]{\left(#1\right)}
 \newcommand{\curlybrace}[1]{\left\{#1\right\}}
 \newcommand{\squarebracket}[1]{\left[#1\right]}
-\newcommand{\rad}{\mbox{rad}}
 \newcommand{\bigo}[1]{O\parenthesis{#1}}
+\newcommand{\F}[1]{\mathbb{F}_{#1}}
+\newcommand{\Q}[1]{\mathbb{Q}_{#1}}
+\newcommand{\Z}[1]{\mathbb{Z}_{#1}}
+\DeclareMathOperator{\rad}{rad}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\SL}{SL}
 
 \renewcommand*{\chapterautorefname}{Chapter}
 \renewcommand*{\sectionautorefname}{Section}
