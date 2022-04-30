@@ -12,7 +12,6 @@
 \interfootnotelinepenalty=10000
 
 \ifxetex
-	\usepackage[no-math]{fontspec}
 	\usepackage{unicode-math}
 	\newcommand{\fakebold}{1}
 	\newcommand{\scale}{1}
@@ -21,8 +20,11 @@
 	\setsansfont[FakeBold=1,Scale=\scale]{Latin Modern Sans}
 	\setmonofont[FakeBold=1,Scale=\scale]{Latin Modern Mono}
 	\setmathfont[FakeBold=\fakemathbold,Scale=\scale]{NewCMMath-Book.otf}
-	\setmathfont[range={it},FakeBold=\fakemathbold,Scale=\scale]{ModernMT-ExtendedItalic-New.otf}
-	\setmathfont[range={\partial},FakeBold=\fakebold]{OldStandard-Regular.otf}
+	\setmathfont[range={it,},FakeBold=\fakemathbold,Scale=\scale]{ModernMT-ExtendedItalic-New.otf}
+	\setmathfont[range={up,},FakeBold=\fakemathbold,Scale=\scale]{ModernMT-Extended-New.otf}
+	\setmathfont{texgyrepagella-math.otf}[range={"0028,"0029,"005B,"005D,"007B,"007D,}]
+	\setmathfont{OldStandard-Regular.otf}[range={\partial},FakeBold=\fakemathbold]
+
 	\newfontfamily{\bask}{ModernExtT-Theano.otf}
 	\makeatletter
 	\RenewDocumentCommand{\sum@}{}{\DOTSB\baskervillesum}
