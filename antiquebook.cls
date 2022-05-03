@@ -4,7 +4,7 @@
 
 \RequirePackage{amsmath, amsthm, amssymb}
 \RequirePackage{hyperref}
-\RequirePackage{tocloft,xifthen,centernot, iftex,titlesec,ifthen,rotating,fancyhdr,subfiles,authoraftertitle}
+\RequirePackage{tocloft,xifthen,centernot, iftex,titlesec,ifthen,rotating,fancyhdr,subfiles,authoraftertitle,glossaries-extra}
 \usepackage[bibstyle=philosophy-modern,citestyle=philosophy-verbose,backend=biber,autopunct,sortcites,]{biblatex}
 
 \hypersetup{linktocpage,unicode,pdfencoding=auto,}
@@ -19,13 +19,15 @@
 	\setmainfont[FakeBold=\fakebold,ItalicFont=ModernMT-ExtendedItalic-New.otf,ItalicFeatures={FakeBold=\fakebold,Scale=\scale},BoldItalicFont=ModernMT-ExtendedItalic-New.otf,SmallCapsFont={OldStandard-Regular.otf},SmallCapsFeatures={Letters=SmallCaps,FakeBold=\fakebold,RawFeature=+smcp,Scale=\scale},BoldFont=OldStandard-Bold.otf,BoldFeatures={FakeBold=0,Scale=\scale,SmallCapsFont=OldStandard-Bold.otf,SmallCapsFeatures={RawFeature=+smcp,Scale=\scale}},BoldItalicFeatures={FakeBold=3},]{ModernMT-Extended-New.otf}
 	\setsansfont[FakeBold=1,Scale=\scale]{Latin Modern Sans}
 	\setmonofont[FakeBold=1,Scale=\scale]{Latin Modern Mono}
-	\setmathfont[FakeBold=\fakemathbold,Scale=\scale]{NewCMMath-Book.otf}
+	\setmathfont[FakeBold=\fakemathbold,Scale=\scale]{latinmodern-math.otf}
 	\setmathfont[range={it,},FakeBold=\fakemathbold,Scale=\scale]{ModernMT-ExtendedItalic-New.otf}
 	\setmathfont[range={up,},FakeBold=\fakemathbold,Scale=\scale]{ModernMT-Extended-New.otf}
-	\setmathfont{texgyrepagella-math.otf}[range={"0028,"0029,"005B,"005D,"007B,"007D,}]
+	\setmathfont{latinmodern-math.otf}[range=bfup,FakeBold=\fakemathbold]
+	\setmathfont{ModernMT-ExtendedItalic-New.otf}[range=bfit,FakeBold=\fakemathbold]
+	\setmathfont{NewCMMath-Regular.otf}[range={"0028,"0029,"005B,"005D,"007B,"007D,}]%NewCMMath-Regular.otf,texgyrepagella-math.otf
 	\setmathfont{OldStandard-Regular.otf}[range={\partial},FakeBold=\fakemathbold]
-
-	\newfontfamily{\bask}{ModernExtT-Theano.otf}
+	
+	\newfontfamily{\sumfont}{lmromanslant17-regular.otf}% GFSSolomos.otf,lmroman17-regular.otf,lmromanslant17-regular.otf
 	\makeatletter
 	\RenewDocumentCommand{\sum@}{}{\DOTSB\baskervillesum}
 	\AtBeginDocument{%
@@ -34,13 +36,14 @@
 	\NewDocumentCommand{\baskervillesum}{}{%
 		\mathchoice
 		{\makebaskervillesum{1.8}}% displaystyle
-		{\makebaskervillesum{1.2}}% textstyle
+		{\makebaskervillesum{1.4}}% textstyle
 		{\makebaskervillesum{1}}% scriptstyle
 		{\makebaskervillesum{0.7}}% scriptscriptstyle
 	}
 	\NewDocumentCommand{\makebaskervillesum}{m}{%
-		\vcenter{\hbox{\scalebox{#1}{\bask Σ}}}%
+		\vcenter{\hbox{\scalebox{#1}{\sumfont Σ}}}%
 	}
+	\newfontfamily{\prodfont}{ModernExtT-Theano.otf}%OldStandard-Italic.otf,ModernExtT-Theano.otf
 	\makeatletter
 	\RenewDocumentCommand{\prod@}{}{\DOTSB\baskervilleprod}
 	\AtBeginDocument{%
@@ -48,15 +51,15 @@
 	}
 	\NewDocumentCommand{\baskervilleprod}{}{%
 		\mathchoice
-		{\makebaskervilleprod{1.5}}% displaystyle
+		{\makebaskervilleprod{1.6}}% displaystyle
 		{\makebaskervilleprod{1.2}}% textstyle
 		{\makebaskervilleprod{1}}% scriptstyle
 		{\makebaskervilleprod{0.7}}% scriptscriptstyle
 	}
 	\NewDocumentCommand{\makebaskervilleprod}{m}{%
-		\vcenter{\hbox{\scalebox{#1}{\bask ∏}}}%
+		\vcenter{\hbox{\scalebox{#1}{\prodfont ∏}}}%
 	}
-	\newfontfamily\intfont{Old Standard Italic}
+	\newfontfamily\intfont{latinmodern-math.otf}% OldStandard-Italic.otf,,Erewhon-Math.otf
 	\makeatletter
 	\NewDocumentCommand{\int@}{}{\DOTSB\baskervilleint}
 	\AtBeginDocument{%
@@ -64,7 +67,7 @@
 	}
 	\NewDocumentCommand{\baskervilleint}{}{%
 		\mathchoice
-		{\makebaskervilleint{1.5}}% displaystyle
+		{\makebaskervilleint{1.6}}% displaystyle
 		{\makebaskervilleint{1.2}}% textstyle
 		{\makebaskervilleint{1}}% scriptstyle
 		{\makebaskervilleint{0.7}}% scriptscriptstyle
