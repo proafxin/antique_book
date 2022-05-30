@@ -1,0 +1,5 @@
+ \ProvidesFile{ext-eprint.dbx}[2016/09/11 extended stand-alone eprint fields]
+ \DeclareDatamodelFields[type=field,datatype=verbatim]{arxiv,mr,zbl,jstor,hdl,pubmed,googlebooks,pmcid}
+ \DeclareDatamodelEntryfields{arxiv,mr,zbl,jstor,hdl,pubmed,googlebooks,pmcid}
+ \DeclareDatamodelFields[type=field,datatype=literal]{arxivclass}
+ \DeclareDatamodelEntryfields{arxivclass}
