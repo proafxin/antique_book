@@ -59,21 +59,10 @@
 	\setmathfont[,Scale=\scale,FakeStretch=\fakestretch,FakeBold=\fakemathbold]{NewCMMath-Regular.otf}% KpMath-Regular.otf,KpMath-Light.otf
 	
 	\setmathfont[range={it,"007D,frak,"2022,{up/Greek},{it/Greek},"22EF,"2217-"2219,"2229-"222B,"2208,"2022,"211C,"2111},Scale=\scale,FakeStretch=\fakestretch,FakeBold=\fakemathbold]{CenturymodernTT-Italic.otf}
-	%\setmathfont[range={up,"03BB,},Scale=\scale,FakeStretch=\fakestretch,FakeBold=\fakemathbold]{CenturymodernTT-Regular.otf}
-	%\setmathfont{latinmodern-math.otf}[range={bfup,},Scale=\scale,FakeStretch=\fakestretch,FakeBold=\fakemathbold]
-	%\setmathfont{CenturymodernTT-Regular.otf}[range={"005B,"005D,"2308-"230B,"005B,"005D,"003A,"003B,"002C,"003D,"2260-"2267,"00A7},FakeStretch=1.1\fakestretch]% NewCMMath-Regular.otf,texgyrepagella-math.otf
-	\setmathfont{CenturymodernTT-Regular.otf}[range={it/{num,"03BB},up/{num,"03BB},"00A7,"03BB,},Scale=\scale,FakeStretch=\fakestretch,FakeBold=\fakemathbold]
-	%\setmathfont{FeDPrm2.ttf}[range={"0028-"0029,"00A7,"005B-"005D},]
-	%\setmathfont{IMFellEnglish-Regular.ttf}[range={"007B-"007D,}]
-	\setmathfont{ModernMT-ExtendedItalic-New.otf}[range={"2260-"2267,"226A-"226B,"003C,"003E,"03B1},FakeBold=\fakemathbold,FakeStretch=1.1\fakestretch]
-	\setmathfont[range={bb,"007D,"2022,{up/Greek},{it/Greek},"22EF,"2217-"2219,"2229-"222B,"2208,"2022,"003D,"2264-"2265,"2260,"22C4,frak},Scale=\scale,FakeStretch=1.05\fakestretch,FakeBold=2]{CenturymodernTT-Italic.otf}
-	%\setmathfont{CenturymodernTT-Italic.otf}[range={"0066,},FakeBold=\fakemathbold,Scale=.8,FakeStretch=\fakestretch]
-	%\setmathfont{OldStandard-Italic.otf}[range={it/{Greek,greek},},FakeBold=\fakemathbold]
-	%\setmathfont{ModernMT-ExtendedItalic-New.otf}[range={"003D},Scale=\scale,FakeStretch=1.2]
-	%\setmathfont{CenturymodernTT-regular.otf}[range={up/{greek,Greek},it/{greek,Greek},},FakeBold=\fakemathbold,Scale=\scale,FakeStretch=\fakestretch]
-	\setmathfont{CenturymodernTT-Italic.ttf}[range={"221E,"002F,"00B1,"0021,},Scale=\scale,FakeBold=\fakemathbold,FakeStretch=\fakestretch]%,{it/{greek}},{up/{greek}},
-	\setmathfont{IMFELLDoublePicaRomanSC.otf}[range={"007B-"007D,"0028-"0029,"002F,"005B-"005D,"00A7,\mid,},FakeBold=0]
-	\setmathfont{IMFellEnglish-Regular.ttf}[range={"007B,"007D,},]
+	\setmathfont{CenturymodernTT-Regular.otf}[range={it/{num,"03BB},up/{num,"03BB},"00A7,"03BB,"007B-"007D,"0028-"0029,"002F,"005B-"005D,"00A7,\mid,},Scale=\scale,FakeStretch=\fakestretch,FakeBold=\fakemathbold]
+	%\setmathfont{ModernMT-ExtendedItalic-New.otf}[range={"2260-"2267,"226A-"226B,"003C,"003E,"03B1},FakeBold=\fakemathbold,FakeStretch=1.1\fakestretch]
+	\setmathfont[range={bb,"2022,{up/Greek},{it/Greek},"22EF,"2217-"2219,"2229-"222B,"2208,"2022,"003D,"2264-"2265,"2260,"22C4,frak,"221E,"002F,"00B1,"0021,},Scale=\scale,FakeStretch=1.05\fakestretch,FakeBold=2]{CenturymodernTT-Italic.otf}
+	
 	\newfontfamily{\sumfont}{CenturymodernTT-Italic.otf}[]% GFSSolomos.otf,lmroman17-regular.otf,lmromanslant17-regular.otf,Theano Didot Regular V1.otf
 	\makeatletter
 	\RenewDocumentCommand{\sum@}{}{\DOTSB\baskervillesum}
