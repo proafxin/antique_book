@@ -53,16 +53,16 @@
 	\newcommand{\fakestretch}{1.}
 	\newcommand{\scale}{1.}
 	\newcommand{\fakemathbold}{0.}
-	\setmainfont[FakeBold=\fakebold,ItalicFont=CenturymodernTT-Italic.otf,BoldItalicFont=CenturymodernTT-Italic.otf,SmallCapsFont={CenturymodernTT-SC.otf},BoldFont=CenturymodernTT-Regular.otf,BoldFeatures={SmallCapsFeatures={FakeBold=2}},BoldItalicFeatures={FakeBold=2},Scale=\scale,FakeStretch=\fakestretch]{CenturymodernTT-Regular.otf}
+	\setmainfont[FakeBold=\fakebold,ItalicFont=CenturymodernTT-Italic.otf,BoldItalicFont=CenturymodernTT-Italic.otf,SmallCapsFont={CenturymodernTT-SC.otf},BoldFont=CenturymodernTT-Regular.otf,BoldFeatures={SmallCapsFeatures={FakeBold=2}, FakeBold=2},BoldItalicFeatures={FakeBold=2},Scale=\scale,FakeStretch=\fakestretch]{CenturymodernTT-Regular.otf}
 	\setsansfont[FakeBold=\fakebold,Scale=\scale,FakeStretch=\fakestretch]{NewCMSans10-Book.otf}
 	\setmonofont[FakeBold=\fakebold,Scale=\scale,FakeStretch=\fakestretch]{NewCMMono10-Book.otf}
 	\setmathfont[,Scale=\scale,FakeStretch=\fakestretch,FakeBold=\fakemathbold]{NewCMMath-Regular.otf}% KpMath-Regular.otf,KpMath-Light.otf
-	
+
 	\setmathfont[range={it,"007D,frak,"2022,{up/Greek},{it/Greek},"22EF,"2217-"2219,"2229-"222B,"2208,"2022,"211C,"2111},Scale=\scale,FakeStretch=\fakestretch,FakeBold=\fakemathbold]{CenturymodernTT-Italic.otf}
 	\setmathfont{CenturymodernTT-Regular.otf}[range={it/{num,"03BB},up/{num,"03BB},"00A7,"03BB,"007B-"007D,"0028-"0029,"002F,"005B-"005D,"00A7,\mid,},Scale=\scale,FakeStretch=\fakestretch,FakeBold=\fakemathbold]
 	%\setmathfont{ModernMT-ExtendedItalic-New.otf}[range={"2260-"2267,"226A-"226B,"003C,"003E,"03B1},FakeBold=\fakemathbold,FakeStretch=1.1\fakestretch]
 	\setmathfont[range={bb,"2022,{up/Greek},{it/Greek},"22EF,"2217-"2219,"2229-"222B,"2208,"2022,"003D,"2264-"2265,"2260,"22C4,frak,"221E,"002F,"00B1,"0021,},Scale=\scale,FakeStretch=1.05\fakestretch,FakeBold=2]{CenturymodernTT-Italic.otf}
-	
+
 	\newfontfamily{\sumfont}{CenturymodernTT-Italic.otf}[]% GFSSolomos.otf,lmroman17-regular.otf,lmromanslant17-regular.otf,Theano Didot Regular V1.otf
 	\makeatletter
 	\RenewDocumentCommand{\sum@}{}{\DOTSB\baskervillesum}
@@ -120,35 +120,35 @@
 	\ExplSyntaxOn
 	\box_new:N \l_masum_box
 	\RenewDocumentEnvironment{pmatrix}{}
-	{ 
-		\hbox_set:Nw \l_masum_box 
+	{
+		\hbox_set:Nw \l_masum_box
 		\c_math_toggle_token
 		\begin{matrix}
 		}
-		{ 
+		{
 		\end{matrix}
 		\c_math_toggle_token
 		\hbox_set_end:
 		\scaleleftright[.8ex]{(}{\box_use:N \l_masum_box}{)}
 	}
-	
+
 	\box_new:N \l_masum_box_vm
 	\RenewDocumentEnvironment{vmatrix}{}
-	{ 
+	{
 		\hbox_set:Nw \l_masum_box_vm
 		\c_math_toggle_token
 		\begin{matrix}
 		}
-		{ 
+		{
 		\end{matrix}
 		\c_math_toggle_token
 		\hbox_set_end:
 		\scaleleftright[.5ex]{|}{\box_use:N \l_masum_box_vm}{|}
 	}
-	
+
 	\box_new:N \l_masum_box_new
 	\RenewDocumentEnvironment{cases}{}
-	{ 
+	{
 		\hbox_set:Nw \l_masum_box_new
 		\c_math_toggle_token
 		\begin{matrix}
