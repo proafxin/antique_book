@@ -41,12 +41,6 @@
 
 \usepackage{hyperref,titlesec,xifthen,iftex,authoraftertitle,}
 
-\usepackage[bibstyle=philosophy-modern,citestyle=philosophy-verbose,backend=biber,autopunct,sortcites,dashed,datamodel=ext-eprint,doi,eprint]{biblatex}
-
-\hypersetup{linktocpage,unicode,pdfencoding=auto,pdfstartview=,allcolors=black,anchorcolor=black,allbordercolors=black,hidelinks}
-\DeclareNameAlias{sortname}{given-family}
-\interfootnotelinepenalty=10000
-
 \ifPDFTeX
 	\usepackage{pdfrender, xcolor,relsize}
 	\usepackage[T1]{fontenc}
@@ -56,16 +50,16 @@
 	\newcommand{\fakestretch}{1.}
 	\newcommand{\scale}{1.1}
 	\newcommand{\fakemathbold}{0.}
-	\setmainfont[FakeBold=\fakebold,ItalicFont=CenturymodernTT-Italic.otf,BoldItalicFont=CenturymodernTT-Italic.otf,SmallCapsFont={CenturymodernTT-SC.otf},BoldFont=CenturymodernTT-Regular.otf,BoldFeatures={SmallCapsFeatures={FakeBold=2}, FakeBold=2},BoldItalicFeatures={FakeBold=2},Scale=\scale,FakeStretch=\fakestretch]{CenturymodernTT-Regular.otf}
-	\setsansfont[FakeBold=\fakebold,Scale=\scale,FakeStretch=\fakestretch]{NewCMSans10-Book.otf}
-	\setmonofont[FakeBold=\fakebold,Scale=\scale,FakeStretch=\fakestretch]{NewCMMono10-Book.otf}
-	\setmathfont[,Scale=\scale,FakeStretch=\fakestretch,FakeBold=\fakemathbold]{NewCMMath-Book-custom2.otf}% texgyreschola-math.otf KpMath-Regular.otf,KpMath-Light.otf
+	\setmainfont{CenturymodernTT-Regular.otf}[FakeBold=\fakebold,ItalicFont=CenturymodernTT-Italic.otf,BoldItalicFont=CenturymodernTT-Italic.otf,SmallCapsFont={CenturymodernTT-SC.otf},BoldFont=CenturymodernTT-Regular.otf,BoldFeatures={SmallCapsFeatures={FakeBold=2}, FakeBold=2},BoldItalicFeatures={FakeBold=2},Scale=\scale,FakeStretch=\fakestretch]
+	\setsansfont{NewCMSans10-Book.otf}[FakeBold=\fakebold,Scale=\scale,FakeStretch=\fakestretch]
+	\setmonofont{NewCMMono10-Book.otf}[FakeBold=\fakebold,Scale=\scale,FakeStretch=\fakestretch]
+	\setmathfont{NewCMMath-Book-custom2.otf}[,Scale=\scale,FakeStretch=\fakestretch,FakeBold=\fakemathbold]% texgyreschola-math.otf KpMath-Regular.otf,KpMath-Light.otf
 
-	\setmathfont[range={it,"007D,frak,"2018-"2022,{up/Greek},{it/Greek},"22EF,"2217-"2219,"2229-"222B,"2208,"2022,"211C,"2111},Scale=\scale,FakeStretch=\fakestretch,FakeBold=\fakemathbold]{CenturymodernTT-Italic.otf}
+	\setmathfont{CenturymodernTT-Italic.otf}[range={it,"007D,frak,"2018-"2022,{up/Greek},{it/Greek},"22EF,"2217-"2219,"2229-"222B,"2208,"2022,"211C,"2111},Scale=\scale,FakeStretch=\fakestretch,FakeBold=\fakemathbold]
 	%\setmathfont{CenturymodernTT-Regular.otf}[range={it/{num,"03BB},up/{num,"03BB},\mid,},Scale=\scale,FakeStretch=\fakestretch,FakeBold=\fakemathbold]
 	\setmathfont{CenturymodernTT-Regular.otf}[range={it/{num,"03BB},up/{num,"03BB},"002D,"005E-"0060,"00A7,"03BB,"007B-"007D,"002F, "005F,"00A7,\mid,},Scale=\scale,FakeStretch=\fakestretch,FakeBold=\fakemathbold]
-	\setmathfont[range={frak,"221E,},Scale=\scale,FakeStretch=\fakestretch,FakeBold=\fakemathbold]{CenturymodernTT-Italic.otf}
-	\setmathfont[range={bb,"2022,"22EF,"2217-"2219,"2229-"222B,"2208,"2022,"2260,"22C4,"002F,"00B1,"0021,"002D},Scale=\scale,FakeStretch=\fakestretch,FakeBold=2]{CenturymodernTT-Italic.otf}
+	\setmathfont{CenturymodernTT-Italic.otf}[range={frak,"221E,},Scale=\scale,FakeStretch=\fakestretch,FakeBold=\fakemathbold]
+	\setmathfont{CenturymodernTT-Italic.otf}[range={bb,"2022,"22EF,"2217-"2219,"2229-"222B,"2208,"2022,"2260,"22C4,"002F,"00B1,"0021,"002D},Scale=\scale,FakeStretch=\fakestretch,FakeBold=2]
 	%\setmathfont[range={{up/Greek},{it/Greek},} ,Scale=\scale,FakeStretch=1.05\fakestretch,FakeBold=\fakemathbold]{ModernMT-Extended-New.otf}
 	%\setmathfont{NewCMMath-Book-custom.otf}
 	%\setmathfont{CenturymodernTT-Italic.ttf}[range={},Scale=\scale,FakeBold=\fakemathbold,FakeStretch=\fakestretch]%,{it/{greek}},{up/{greek}},
@@ -248,72 +242,6 @@
 \newtheorem*{solution}{\text{Solution}}
 %\numberwithin{problem}{chapter}
 
-\defbibfilter{books}{type=book or type=inbook}
-
-\DeclareSourcemap{
-	\maps[datatype=bibtex]{
-		\map{
-			\step[fieldsource=pmid, fieldtarget=pubmed]
-		}
-	}
-}
-
-\makeatletter
-\DeclareFieldFormat{arxiv}{%
-	arXiv\addcolon\space
-	\ifhyperref
-	{\href{http://arxiv.org/\abx@arxivpath/#1}{%
-			\nolinkurl{#1}%
-			\iffieldundef{arxivclass}
-			{}
-			{\addspace\texttt{\mkbibbrackets{\thefield{arxivclass}}}}}}
-	{\nolinkurl{#1}
-		\iffieldundef{arxivclass}
-		{}
-		{\addspace\texttt{\mkbibbrackets{\thefield{arxivclass}}}}}}
-\makeatother
-\DeclareFieldFormat{pmcid}{%
-	PMCID\addcolon\space
-	\ifhyperref
-	{\href{http://www.ncbi.nlm.nih.gov/pmc/articles/#1}{\nolinkurl{#1}}}
-	{\nolinkurl{#1}}}
-\DeclareFieldFormat{mr}{%
-	MR\addcolon\space
-	\ifhyperref
-	{\href{http://www.ams.org/mathscinet-getitem?mr=MR#1}{\nolinkurl{#1}}}
-	{\nolinkurl{#1}}}
-\DeclareFieldFormat{zbl}{%
-	Zbl\addcolon\space
-	\ifhyperref
-	{\href{http://zbmath.org/?q=an:#1}{\nolinkurl{#1}}}
-	{\nolinkurl{#1}}}
-\DeclareFieldAlias{jstor}{eprint:jstor}
-\DeclareFieldAlias{hdl}{eprint:hdl}
-\DeclareFieldAlias{pubmed}{eprint:pubmed}
-\DeclareFieldAlias{googlebooks}{eprint:googlebooks}
-
-\renewbibmacro*{eprint}{%
-	\printfield{arxiv}%
-	\newunit\newblock
-	\printfield{jstor}%
-	\newunit\newblock
-	\printfield{mr}%
-	\newunit\newblock
-	\printfield{zbl}%
-	\newunit\newblock
-	\printfield{hdl}%
-	\newunit\newblock
-	\printfield{pubmed}%
-	\newunit\newblock
-	\printfield{pmcid}%
-	\newunit\newblock
-	\printfield{googlebooks}%
-	\newunit\newblock
-	\iffieldundef{eprinttype}
-	{\printfield{eprint}}
-	{\printfield[eprint:\strfield{eprinttype}]{eprint}}}
-
-
-\usepackage{graphicx}
-\usepackage{eso-pic}
-\AddToShipoutPictureBG{\includegraphics[width=\paperwidth,height=\paperheight]{background}}
+%\usepackage{graphicx}
+%\usepackage{eso-pic}
+%\AddToShipoutPictureBG{\includegraphics[width=\paperwidth,height=\paperheight]{background}}
