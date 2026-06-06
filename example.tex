@@ -1,32 +1,34 @@
-\documentclass{antiquebook}
-
+% Compile with LuaLaTeX (or XeLaTeX).
+\documentclass[titles,toc,header,delimiters]{vetus}
 
 \usepackage{lipsum}
 \usepackage[math]{blindtext}
 
 \author{Masum Billal \and Author Two}
-\title{{Testing Antique Book}}
-
-%\input{glossary.tex}
+\title{Testing Vetus}
 
 \begin{document}
 	\frontmatter
 	\maketitle
 	\tableofcontents
 	\mainmatter
-	\pagestyle{fancy}
 	\chapter{First}
 	\section{Dummy}
 	\blindmathtrue
 	\blindmathpaper
 	\section{Second}
 	\blindmathpaper
-	\textbf{Some bold text.}
-		\begin{align*}
-			\parenthesis{\squarebracket{\floor{\dfrac{x}{n}}}}
-				& \leq \curlybrace{\ceiling{\dfrac{x}{n}}}\\
-			\prod_{p\leq x}p
-				& \leq\sqrt[4]{avbc}
-		\end{align*}
-	$a,b,c,\alpha,\beta,\gamma,\phi,\varphi,\psi,\Psi,\rho,\partial$. \textsc{This is SmallCaps text}
+	\textbf{Some bold text.} \textsc{This is small caps text.}
+	\begin{align*}
+		\parenthesis{\squarebracket{\dfrac{x}{n}}}
+			& \leq \curlybrace{\dfrac{x}{n}}\\
+		\prod_{p\leq x}p
+			& \leq \sum_{p \leq x} p \leq \int_{1}^{x} t\,dt \leq \sqrt[4]{abc}
+	\end{align*}
+	\[
+		\begin{pmatrix} a & b\\ c & d \end{pmatrix}
+		\qquad
+		\binom{n}{k}
+	\]
+	$a,b,c,\alpha,\beta,\gamma,\phi,\varphi,\psi,\Psi,\rho,\partial,\lambda$, digits $0123456789$.
 \end{document}
